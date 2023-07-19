@@ -6,7 +6,7 @@ It heavily relies on Arweave's GraphQL API but makes it super easy for less tech
 - [x] Scrapper microservice with a yet single route (localhost:3000/fetch_by_filetype). It allows users to fetch for last 100 files of a particular filetype (Not all filetypes are supported)
 
 ## What will work in the future
-- [] Crawler that will get metadata of found files to make better filtering options
-- [] API that will do all the searching itself, probably will use something like OpenSearch 
-- [] Cache that will store other people found files to make serach even faster
-- [] Aesthetically-pleasing frontend using tauri and unknown for now JS-framework
+- [ ] Crawler that will get metadata of found files to make better filtering options
+- [ ] API that will do all the searching itself, probably will use something like OpenSearch 
+- [ ] Cache that will store other people found files to make serach even faster
+- [ ] Aesthetically-pleasing frontend using tauri and unknown for now JS-framework
