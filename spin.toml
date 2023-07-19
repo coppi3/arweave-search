@@ -1,0 +1,17 @@
+spin_manifest_version = "1"
+authors = ["rxn <coppiemertz@gmail.com>"]
+description = ""
+name = "scrapper"
+trigger = { type = "http", base = "/" }
+version = "1.0.0"
+
+[[component]]
+id = "service"
+source = "scrapper/target/wasm32-wasi/release/scrapper.wasm"
+allowed_http_hosts = ["arweave.net", "arweave.dev"]
+[component.trigger]
+route = "/fetch_by_filetype"
+[component.build]
+workdir = "scrapper"
+command = "cargo build --target wasm32-wasi --release"
+watch = ["scrapper/src/**/*.rs", "scrapper/Cargo.toml"]

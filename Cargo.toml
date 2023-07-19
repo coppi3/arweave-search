@@ -1,0 +1,21 @@
+[package]
+name = "arweave-search"
+authors = ["rxn <coppiemertz@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+
+# [dependencies]
+# arweave-scrapper = {path = "./arweave-scrapper"}
+# base64 = "0.21.2"
+# arweave-api = {path = "./arweave-api"}
+
+[workspace]
+members = [
+"scrapper",
+"api"
+]
+[lib]
+crate-type = ["cdylib", "lib"]
+path = "scrapper/src/lib.rs"
+bench = false
+
