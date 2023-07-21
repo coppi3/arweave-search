@@ -2,4 +2,4 @@
 /scrapper/target
 /scrapper/.vscode
 /frontend
-/.spin
+/.spin/*

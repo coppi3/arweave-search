@@ -22,7 +22,7 @@ pub fn fetch_by_filetype(req: Request, _params: Params) -> Result<Response> {
     let Ok(req) = build_arweave_request(model) else {
         return Ok(http::Response::builder()
             .status(http::StatusCode::BAD_REQUEST)
-            .body(None)?);
+            .body(Some(Bytes::from("Invalid request body. Probably the type you specified doesn't exist in the lookup table")))?);
     };
 
     match spin_sdk::outbound_http::send_request(req) {
