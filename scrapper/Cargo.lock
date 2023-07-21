@@ -24,22 +24,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3b13c32d80ecc7ab747b80c3784bce54ee8a7a0cc4fbda9bf4cda2cf6fe90854"
 
 [[package]]
-name = "arweave-scrapper"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "base64",
- "bytes",
- "http",
- "lazy_static",
- "reqwest",
- "serde",
- "serde_json",
- "spin-sdk",
- "tracing",
-]
-
-[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -692,6 +676,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c3733bf4cf7ea0880754e19cb5a462007c4a8c1914bff372ccc95b464f1df88"
 dependencies = [
  "windows-sys",
+]
+
+[[package]]
+name = "scrapper"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "base64",
+ "bytes",
+ "http",
+ "lazy_static",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "spin-sdk",
+ "tracing",
 ]
 
 [[package]]

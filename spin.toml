@@ -7,10 +7,10 @@ version = "1.0.0"
 
 [[component]]
 id = "service"
-source = "scrapper/target/wasm32-wasi/release/scrapper.wasm"
-allowed_http_hosts = ["arweave.net", "arweave.dev"]
+source = "target/wasm32-wasi/release/scrapper.wasm"
+allowed_http_hosts = ["arweave.net", "arweave.dev", "insecure:allow-all"]
 [component.trigger]
-route = "/fetch_by_filetype"
+route = "/..."
 [component.build]
 workdir = "scrapper"
 command = "cargo build --target wasm32-wasi --release"

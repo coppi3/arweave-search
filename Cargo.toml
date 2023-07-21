@@ -12,7 +12,7 @@ edition = "2021"
 [workspace]
 members = [
 "scrapper",
-"api"
+"api",
 ]
 [lib]
 crate-type = ["cdylib", "lib"]
