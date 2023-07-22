@@ -16,7 +16,7 @@ pub fn fetch_by_filetype(req: Request, _params: Params) -> Result<Response> {
     let Ok(model) = FetchByFiletype::try_from(req.body().clone()) else {
                     return Ok(http::Response::builder()
                       .status(http::StatusCode::BAD_REQUEST)
-                      .body(None)?);
+                      .body(Some(Bytes::from("Incorrect request body schema.")))?);
         };
     // let body = json!({"filetype": model.filetype});
     let Ok(req) = build_arweave_request(model) else {
@@ -31,7 +31,7 @@ pub fn fetch_by_filetype(req: Request, _params: Params) -> Result<Response> {
             let Ok(new_resp )= handle_graphql_resp(r) else{
             return Ok(http::Response::builder()
                 .status(http::StatusCode::INTERNAL_SERVER_ERROR)
-                .body(None)?)
+                .body(Some(Bytes::from("Arweave GraphQL API error")))?)
 
             };
             Ok(new_resp)
@@ -43,7 +43,10 @@ pub fn fetch_by_filetype(req: Request, _params: Params) -> Result<Response> {
                 );
             Ok(http::Response::builder()
                 .status(http::StatusCode::INTERNAL_SERVER_ERROR)
-                .body(None)?)
+                .body(Some(Bytes::from(format!(
+                    "Did not receive successful response from Arweave GraphQL endpoint({})",
+                    e
+                ))))?)
         }
     }
 }
